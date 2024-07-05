@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section3 {
+  font-family: 'Rubik';
+  background: linear-gradient(110deg, #0a2e7f 50%, #f4ab19 50%);
+  margin-top: -80px;
+  background-attachment:fixed;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+#faq-search {
+  position: relative;
+  padding-left: 5px;
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.faq-container {
+  font-family: 'Rubik';
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 10px, rgba(0, 0, 0, 0.401) 0px 6px 6px;
+}
+
+/* FAQ title styles */
+.faq-title {
+  font-family: 'Rubik';
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #333;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* FAQ item styles */
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* FAQ question button styles */
+.faq-question {
+  font-family: 'Rubik';
+  font-weight: bold;
+  font-size: 20px; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  text-align: left;
+  transition: color 0.3s ease;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.faq-question:hover {
+  color: #2500dc;
+  text-decoration: underline;
+}
+
+/* FAQ answer styles */
+.faq-answer {
+  font-family: 'Rubik';
+  padding: 0 0;
+  color: #121111;
+  font-size: 14.5px;
+  line-height: 1.5;
+  text-align: left;
+  padding-left: 50px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+
+
+.faq-item.active .faq-answer {
+  max-height: 1000px; /* Large value for smooth transition */
+  padding: 10px 0;
+}
