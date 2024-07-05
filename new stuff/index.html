@@ -49,8 +49,116 @@
 
 
 
+
 <!-- GPA Calculator HTML -->
 
+<div id="outsideColorGPAHelper">
+  <div class="content calculator-section" id="calculator-gpa">
+    <div class="cumulative-gpa" id="gpa-container">
+      Overall Unweighted GPA: <span id="unweighted-gpa"></span><br>
+      Overall Weighted GPA: <span id="gpa"></span><br>
+    </div>
+    <div class="enter-info-section">
+  
+    <p id = "title-for-entering-info">Enter Class Details</p>
+    <form id="gpa-form">
+      <!--NOTE: IF YOU PUT PLAIN BUTTONS HERE, IT WILL AUTO ADD CLASS-->
+      <div class="form-row">
+       <label for="class-name">Class Name:</label>
+        <input type="text" id="class-name" name="class-name" placeholder="e.g. Math" type="text" spellcheck="false">
+      </div> 
+  
+      <div class="form-row">
+        <label for="grade">Letter Grade:</label>
+        <select id="grade" name="grade">
+          <option value="4.33">A+</option>
+          <option value="4.00">A</option>
+          <option value="3.67">A-</option>
+          <option value="3.33">B+</option>
+          <option value="3.0">B</option>
+          <option value="2.67">B-</option>
+          <option value="2.33">C+</option>
+          <option value="2.00">C</option>
+          <option value="1.67">C-</option>
+          <option value="1.34">D+</option>
+          <option value="1.0">D</option>
+          <option value="0.67">D-</option>
+          <option value="0.00">U</option>  
+        </select>
+      </div>
+  
+      <div class="form-row">
+        <label for="credits">Credits:</label>
+        <select id="credits" name="credits" value="5" required>
+          <option value="5">5</option>
+          <option value="4.5">4.5</option>
+          <option value="4">4</option>
+          <option value="3.5">3.5</option>
+          <option value="3">3</option>
+          <option value="2.5">2.5</option>
+          <option value="2">2</option>
+          <option value="1.5">1.5</option>
+          <option value="1">1</option>
+          <option value="0.5">0.5</option>
+        </select>
+        <!-- <input id="credits" name="credits" value=5 placeholder="e.g. 5" required> -->
+      </div>
+      
+      <div class="form-row">
+        <label for="class-type">Class Type:</label>
+        <select id="class-type" name="class-type">
+          <option value="Regular">Regular</option>
+          <option value="Honors">Honors</option>
+          <option value="AP">AP</option>
+        </select>
+      </div>
+  
+  
+  
+      <div class="calculator-buttons">
+      <button type="submit" id="add-class">Add Class</button>
+      <button id="add-mp">Add Marking Period</button>
+      <button type="button" id="delete">Delete All</button>
+      <br>
+      <button type="button" id="save-data">Save Current Data</button>
+    </div>
+  
+  
+  
+    </div>
+    <div id="semesters">
+  
+      <p class="add-mp-text">Marking Period 1</p> 
+    
+    </div>
+    
+  
+  
+  
+    <table id="classes">
+      <thead>
+        <tr>
+          <th id="class-name-table">Class Name</th>
+          <th id="class-grade-table">Letter Grade</th>
+          <th id="class-credit-table">Credits</th>
+          <th id="class-type-table">Course Type</th> 
+          <th id="class-gpa-table">Grade GPA</th> 
+          <th id="class-edit-table">Edit</th>
+          <th id="class-delete-table">Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    </form>
+  
+    <div id="newMPs"> 
+      
+      
+  
+    </div>
+  
+  </div>
+  </div>
 
 
 
