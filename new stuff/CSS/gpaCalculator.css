@@ -1,0 +1,666 @@
+/* 
+GPA Calculator Styles can be found here
+This is quite long, as many things need to be styled in the GPA calculator
+Mini animation for the inputs are also used.
+There is a split background showing in total: white, yellow, blue
+-These colors are FBLA colors.
+*/
+
+#outsideColorGPAHelper {
+  background: linear-gradient(110deg, #0a2e7f 50%, #f4ab19 50%);
+  padding: 20px 40px 60px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  background-attachment: fixed;
+}
+
+
+#calculator-gpa {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1350px;
+  background-color: #f4efef; /* Set internal calculator background to white */
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 10px, rgba(0, 0, 0, 0.401) 0px 6px 6px;
+}
+
+
+
+
+.cumulative-gpa {
+right: -100px;
+display: block;  
+align-items: flex-start;
+padding-left: 600px;
+font-weight: bold;
+font-size: 1.2em;
+padding-top: 1%;
+margin-bottom: -220px;
+/* Add other styles to make it stand out */
+}
+
+
+ 
+#title-for-entering-info {
+padding-left: 80px;
+font-weight: bold;
+font-size: 1.2em;
+margin-bottom: 20px;
+padding-right: 80px;
+text-align: center;
+}
+
+#gpa-form {
+position: relative;
+padding-bottom: 0px;
+width: 100%;
+max-width: 500px;
+margin: 0 auto 20px;
+margin-bottom: 0px; /* Adjust this value to move the form higher */
+padding-left: 100px;
+}
+
+#class-name, #grade, #credits, #class-type, #grade-year-type {
+width: 200px;
+height: 30px;
+font-size: 15px;
+border-style:calc();
+background-color: #f9f2f2;
+border-color:#000000;
+border-radius: 5px;
+border-width: 1px;
+}
+
+#class-name {
+width: 195px;
+height: 25px;
+}
+
+
+
+.form-row {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.form-row label {
+width: 100px;
+margin-right: 10px;
+text-align: right;
+font-weight: bold;
+}
+
+#add-class, 
+#delete {
+font-family: 'Rubik';
+padding: 5px 10px;
+border: none;
+color: #fff;
+border-radius: 5px;
+cursor: pointer;
+}
+
+
+#classes, #nextClasses {
+width: 90%;
+margin: 0 auto;
+border-collapse: collapse;
+
+}
+
+#classes th, #classes td, #nextClasses th, #nextClasses td {
+border: 1px solid #b9b1b1;
+padding: 8px;
+text-align: left;
+
+}
+
+#classes th,#nextClasses th {
+background-color: #f2f2f2;
+
+}
+
+#gpa {
+font-weight: bold;
+font-size: 35px;
+margin-top: 10px; 
+display: block;
+}
+#unweighted-gpa {
+font-weight: bold;
+font-size: 35px;
+margin-top: 10px;
+display: block;
+}
+
+
+body {
+background-color: #f1f1f1;
+color: #333;
+}
+
+h2 {
+color: #0077c2;
+}
+
+#add-class {
+background-color: rgb(6, 53, 141);
+transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#add-class:hover {
+background-color: rgb(9, 42, 102); 
+transform: scale(1.02);
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#delete-semester {
+margin-bottom: 5px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#delete, #delete-semester {
+font-family: 'Rubik';
+background-color: #ca0e07; 
+color: #fff;
+padding: 5px 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer; 
+transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+
+
+#delete:hover,#delete-semester:hover {
+background-color: #af0a04; 
+transform: scale(1.02);
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#classes th,#nextClasses th {
+background-color: rgb(6, 53, 141);
+color: #fff;
+}
+
+
+.enter-info-section {
+width: 700px;
+}
+
+.calculator-buttons {
+width:400px;
+}
+
+#add-mp {
+font-family: 'Rubik';
+background-color: #226add;
+color: #fff;
+padding: 5px 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer; 
+/** Closes the #header section */
+transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#add-mp:hover {
+  background-color: #115dd6;
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+  }
+
+
+.add-mp-text {
+font-weight: bold;
+font-size: 25px;
+}
+
+
+
+
+#save-data {
+font-family: 'Rubik';
+margin-top: 5px;
+background-color: #2244dd;
+color: #fff;
+padding: 5px 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer; 
+transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#save-data:hover {
+background-color: #1738ca;
+transform: scale(1.02);
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#downloadReport {
+font-family: 'Rubik';
+margin-top: 5px;
+background-color: #3d14e1;
+color: #fff;
+padding: 5px 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer; 
+transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#downloadReport:hover {
+background-color: #2800c7;
+transform: scale(1.02);
+}
+
+
+
+
+.form-row input,
+.form-row select,
+.form-row label,
+.cumulative-gpa,
+#add-class, 
+#delete,
+#add-mp,
+#save-data,
+#downloadReport,
+#delete-semester,
+#title-for-entering-info,
+#classes th, 
+#classes td, 
+#nextClasses th, 
+#nextClasses td,
+.add-mp-text
+{
+animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+
+.form-row input:focus,
+.form-row select:focus {
+border-color: #007BFF;
+box-shadow: 0 0 5px #007BFF;
+}
+
+.form-row input:focus + label,
+.form-row select:focus + label {
+top: -10px;
+font-size: 12px;
+color: #007BFF;
+}
+
+
+
+
+
+
+
+
+
+
+  /* 
+This part is a repeat of the code, but is suited for mobile users instead.
+*/
+
+
+
+
+@media (max-width: 844px) {
+
+
+#outsideColorGPAHelper {
+  background: linear-gradient(110deg, #0a2e7f 50%, #f4ab19 50%);
+  padding: 20px 40px 60px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  background-attachment: fixed;
+}
+
+#calculator-gpa {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1350px;
+  background-color: #f4efef; /* Set internal calculator background to white */
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 10px, rgba(0, 0, 0, 0.401) 0px 6px 6px;
+}
+
+.cumulative-gpa {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding-top: 1%;
+  margin: 20px auto; /* Center align the GPA */
+  text-align: center; /* Center the text */
+  max-width: 600px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#title-for-entering-info {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-align: center; /* Center align the title */
+}
+
+#gpa-form {
+  position: relative;
+  padding-bottom: 0px;
+  max-width: 500px;
+  margin: 0 auto 20px;
+  margin-right: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#class-name, #grade, #credits, #class-type, #grade-year-type {
+  width: 100%;
+  max-width: 200px;
+  height: 30px;
+  font-size: 15px;
+  background-color: #f9f2f2;
+  border-color: #000000;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+#class-name {
+  max-width: 195px;
+  height: 25px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping */
+  margin-right: 50px;
+}
+
+.form-row label {
+  width: 100%;
+  max-width: 100px;
+  margin-right: 10px;
+  text-align: right;
+  font-weight: bold;
+  flex: 1;
+}
+
+#add-class, #delete {
+  font-family: 'Rubik';
+  padding: 5px 10px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#classes, #nextClasses {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+#classes th, #classes td, #nextClasses th, #nextClasses td {
+  border: 1px solid #b9b1b1;
+  padding: 1px;
+  text-align: left;
+}
+
+#classes th, #nextClasses th {
+  background-color: #f2f2f2;
+}
+
+#gpa {
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: 10px;
+  display: block;
+  text-align: center; /* Center align the GPA */
+}
+
+#unweighted-gpa {
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: 10px;
+  display: block;
+  text-align: center; /* Center align the GPA */
+}
+
+body {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+h2 {
+  color: #0077c2;
+}
+
+#add-class {
+  background-color: rgb(6, 53, 141);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+
+#add-class:hover {
+  background-color: rgb(9, 42, 102); 
+  transform: scale(1.02);
+}
+
+#delete-semester {
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#delete, #delete-semester {
+  background-color: #ca0e07; 
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+#delete:hover, #delete-semester:hover {
+  background-color: #af0a04; 
+  transform: scale(1.02);
+}
+
+#classes th, #nextClasses th {
+  background-color: rgb(6, 53, 141);
+  color: #fff;
+}
+
+.enter-info-section {
+  max-width: 100%;
+  padding: 0 20px; /* Add padding for better readability */
+}
+
+.calculator-buttons {
+  max-width: 100%;
+  padding: 0 20px; /* Add padding for better readability */
+}
+
+#add-mp {
+  font-family: 'Rubik';
+  background-color: #226add;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#add-mp:hover {
+  background-color: #115dd6;
+  transform: scale(1.02);
+}
+
+.add-mp-text {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#save-data {
+  font-family: 'Rubik';
+  margin-top: 5px;
+  background-color: #2244dd;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#save-data:hover {
+  background-color: #1738ca;
+  transform: scale(1.02);
+}
+
+#downloadReport {
+  font-family: 'Rubik';
+  margin-top: 5px;
+  background-color: #3d14e1;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#downloadReport:hover {
+  background-color: #2800c7;
+  transform: scale(1.02);
+}
+
+.form-row input,
+.form-row select,
+.form-row label,
+.cumulative-gpa,
+#add-class, 
+#delete,
+#add-mp,
+#save-data,
+#downloadReport,
+#delete-semester,
+#title-for-entering-info,
+#classes th, 
+#classes td, 
+#nextClasses th, 
+#nextClasses td,
+.add-mp-text {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px #007BFF;
+}
+
+.form-row input:focus + label,
+.form-row select:focus + label {
+  top: -10px;
+  font-size: 12px;
+  color: #007BFF;
+}
+
+}
+
+
+
+
+
+
+
+
+
+#edit-name-select, #edit-grade-select, #edit-credit-select, #edit-type-select {
+  height: 20px;
+  font-size: 15px;
+  border-style:calc();
+  background-color: #f9f2f2;
+  border-color:#000000;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+
+#classes {
+  width: 90%;
+}
+
+
+#class-name-table {
+  width: 20%
+}
+
+#class-grade-table {
+  width: 20%
+}
+
+#class-credit-table {
+  width: 15%
+}
+
+#class-type-table {
+  width: 20%
+}
+
+#class-gpa-table {
+  width: 20%
+}
+
+#class-edit-table {
+  width: 10%
+}
+
+#class-delete-table {
+  width: 10%
+}
+
+
