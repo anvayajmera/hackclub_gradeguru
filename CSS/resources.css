@@ -1,0 +1,118 @@
+/* 
+this page of css is fairly simple
+it is only used to style the resources page
+*/
+
+h4 {
+  font-size: 16px;
+}
+
+.section2 {
+  background-color: #0a2e7f;
+  margin-top: -80px;
+  }
+
+#resource-p {
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+
+  
+  #resources {
+  background-color: #0a2e7f;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: center;
+  }
+  
+  
+.resource-box {
+  font-family: 'Rubik';
+  background: #f1eded;
+  border: 1px solid #333;
+  width: calc(100% / 3);
+  height: auto;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  border-width: 10px;
+  border-color: #f4ab19;
+  border-style: outset;
+  box-shadow: rgba(0, 0, 0, 0.53) 0px 10px 20px, rgba(0, 0, 0, 0.796) 0px 6px 6px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.resource-box:hover {
+  box-shadow: rgba(0, 0, 0, 0.53) 10px 20px 20px, rgba(0, 0, 0, 0.796) 0px 6px 6px !important;
+}
+  
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  /** transform:
+    perspective(750px)
+    translate3d(0px, 0px, -250px)
+    rotateX(27deg)
+    scale(0.9, 0.9);
+  border-radius: 20px;
+  border: 5px solid #e6e6e6;
+  box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease-in-out transform;
+
+  &:hover {
+    transform: translate3d(0px, 0px, -250px);
+  } **/
+
+  
+  .resource-box img {
+  width: calc(100%/1.5);
+  height: 200px;
+  }
+  
+  .resource-box h2 {
+    font-family: 'Rubik';
+    color: #333;
+    text-decoration: underline;
+  }
+  
+  .resource-box p {
+  font-size: 14px;
+  }
+  
+  
+  
+
+  .delete {
+    width: 200px;
+  }
+
+
+  @media (max-width: 844px) {
+    .resource-box {
+      font-family: 'Rubik';
+      background: #f1eded;
+      border: 1px solid #333;
+      width: calc(100% / 2);
+      height: auto;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      border-width: 10px;
+      border-color: #f4ab19;
+      border-style: outset;
+      box-shadow: rgba(0, 0, 0, 0.53) 0px 10px 20px, rgba(0, 0, 0, 0.796) 0px 6px 6px;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+  }

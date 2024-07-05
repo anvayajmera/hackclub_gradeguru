@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <!-- Title -->
+    <title>Grade Guru</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to organized CSS files below -->
+    <link rel="stylesheet" type="text/css" href="CSS/body.css"> 
+    <link rel="stylesheet" type="text/css" href="CSS/resources.css"> 
+    <link rel="stylesheet" type="text/css" href="CSS/faq.css"> 
+    <link rel="stylesheet" type="text/css" href="CSS/gpaCalculator.css"> 
+    <link rel="stylesheet" type="text/css" href="CSS/logIn.css"> 
+    
+   
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.10/jspdf.plugin.autotable.min.js"></script>
+
+
+
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="images/FBLALOGO.png" alt="Grade Guru Logo" class="navbar-image"> <!-- Grade Guru Picture -->
+        <a href="#/log-in" onclick="showSection('section4', 'Log In', 'Log in to save calculated grades.')">Log In</a> <!-- Log-in page to save data -->
+        <a href="#/help-center" onclick="showSection('section3', 'Help Center', 'Have any questions? Find them here!')">FAQ</a> <!-- Help page and description -->
+        <a href="#/resources" onclick="showSection('section2', 'Resources', 'Access great resources to boost your GPA.')">Resources</a> <!-- Resources page and description -->
+        <a href="#/home" onclick="showSection('section1', 'Home', 'Welcome to Grade Guru! Explore a multitude of features.')">Home</a> <!-- Slight backup Home page and description, if anyone reclicks there... (updated december) -->
+    </div>
+
+        
+    <!-- Header Section, for specific circumstances -->
+    <div class="header">
+        <h1 id="headerTitle">Home</h1>  <!-- Not really neeeded, since it is replaced with Home. (still decided to keep it) -->
+        <p id="contentText">Welcome to Grade Guru! Explore a multitude of features.</p> 
+        <div id="buttonContainer"></div>
+    </div>
+
+
+
+<!-- GPA Calculator HTML -->
+
+<div id="outsideColorGPAHelper">
+<div class="content calculator-section" id="calculator-gpa">
+  <div class="cumulative-gpa" id="gpa-container">
+    Overall Unweighted GPA: <span id="unweighted-gpa"></span><br>
+    Overall Weighted GPA: <span id="gpa"></span><br>
+  </div>
+  <div class="enter-info-section">
+
+  <p id = "title-for-entering-info">Enter Class Details</p>
+  <form id="gpa-form">
+    <!--NOTE: IF YOU PUT PLAIN BUTTONS HERE, IT WILL AUTO ADD CLASS-->
+    <div class="form-row">
+     <label for="class-name">Class Name:</label>
+      <input type="text" id="class-name" name="class-name" placeholder="e.g. Math" type="text" spellcheck="false">
+    </div> 
+
+    <div class="form-row">
+      <label for="grade">Letter Grade:</label>
+      <select id="grade" name="grade">
+        <option value="4.33">A+</option>
+        <option value="4.00">A</option>
+        <option value="3.67">A-</option>
+        <option value="3.33">B+</option>
+        <option value="3.0">B</option>
+        <option value="2.67">B-</option>
+        <option value="2.33">C+</option>
+        <option value="2.00">C</option>
+        <option value="1.67">C-</option>
+        <option value="1.34">D+</option>
+        <option value="1.0">D</option>
+        <option value="0.67">D-</option>
+        <option value="0.00">U</option>  
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="credits">Credits:</label>
+      <select id="credits" name="credits" value="5" required>
+        <option value="5">5</option>
+        <option value="4.5">4.5</option>
+        <option value="4">4</option>
+        <option value="3.5">3.5</option>
+        <option value="3">3</option>
+        <option value="2.5">2.5</option>
+        <option value="2">2</option>
+        <option value="1.5">1.5</option>
+        <option value="1">1</option>
+        <option value="0.5">0.5</option>
+      </select>
+      <!-- <input id="credits" name="credits" value=5 placeholder="e.g. 5" required> -->
+    </div>
+    
+    <div class="form-row">
+      <label for="class-type">Class Type:</label>
+      <select id="class-type" name="class-type">
+        <option value="Regular">Regular</option>
+        <option value="Honors">Honors</option>
+        <option value="AP">AP</option>
+      </select>
+    </div>
+
+
+
+    <div class="calculator-buttons">
+    <button type="submit" id="add-class">Add Class</button>
+    <button id="add-mp">Add Marking Period</button>
+    <button type="button" id="delete">Delete All</button>
+    <br>
+    <button type="button" id="save-data">Save Current Data</button>
+  </div>
+
+
+
+  </div>
+  <div id="semesters">
+
+    <p class="add-mp-text">Marking Period 1</p> 
+  
+  </div>
+  
+
+
+
+  <table id="classes">
+    <thead>
+      <tr>
+        <th id="class-name-table">Class Name</th>
+        <th id="class-grade-table">Letter Grade</th>
+        <th id="class-credit-table">Credits</th>
+        <th id="class-type-table">Course Type</th> 
+        <th id="class-gpa-table">Grade GPA</th> 
+        <th id="class-edit-table">Edit</th>
+        <th id="class-delete-table">Delete</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  </form>
+
+  <div id="newMPs"> 
+    
+    
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+    <!--Content Section for Numerical Grade calculator -->
+
+   
+
+
+
+    <div class="content section1" id="section1">
+        <!-- Content for HOME PAGE goes here -->
+        <!-- DO NOT PUT ANYTHING HERE, SINCE THERE IS ALREADY A PICTURE -->
+    </div>
+
+
+    <div class="content section2" id="section2">
+        <!-- Content for RESOURCES goes here -->
+         <!-- This section only uses HTML and CSS -->
+        <div id="resources">
+
+          <div class="resource-box">
+            <a href="https://www.khanacademy.org" target="_blank">
+              <img src="images/khan-academy.png" alt="Kahoot Image"> 
+            </a>
+            <h2>Khan Academy</h2>
+            <h4>Description:</h4>
+            <p id="resource-p" >Personalized learning paths and engaging videos in a wide range of subjects, helping in growing knowledge.</p>
+        </div>
+        
+          <div class="resource-box">
+            <a href="https://www.ixl.com" target="_blank">
+              <img src="images/ixl.png" alt="IXL Image">
+            </a>  
+            <h2>IXL</h2>
+            <h4>Description:</h4>
+            <p id="resource-p">Personalized practice exercises and quizzes to conquer subjects like math and language arts, all while tracking progress for skills developed.</p>
+          </div>
+
+          <div class="resource-box">
+            <a href="https://quizlet.com/" target="_blank">
+              <img src="images/quizlet.png" alt="Quizlet Image">
+            </a>  
+            <h2>Quizlet</h2>
+            <h4>Description:</h4>
+            <p id="resource-p">Interactive flashcards, quizzes, and games that are made to help master facts and concepts.</p>
+          </div>
+
+          <div class="resource-box">
+            <a href="https://www.grammarly.com/" target="_blank">
+              <img src="images/grammarly.png" alt="Grammarly Image">
+            </a>  
+            <h2>Grammarly</h2>
+            <h4>Description:</h4>
+            <p id="resource-p">An advanced writing assistant that can check for grammar, spelling, and clarity for polished writing.</p>
+          </div>
+
+          <div class="resource-box">
+            <a href="https://schoolhouse.world/" target="_blank">
+              <img src="images/schoolhouse.png" alt="Schoolhouse Image">
+            </a>  
+            <h2>Schoolhouse</h2>
+            <h4>Description: </h4>
+            <p id="resource-p">A world full of both academic and non-academic subjects, with volunteer tutors to help users learn and develop skills.</p>
+          </div>
+
+          <div class="resource-box">
+            <a href="https://thecrashcourse.com/" target="_blank">
+              <img src="images/crashcourse.png" alt="Crash Course Image">
+            </a>  
+            <h2>Crash Course</h2>
+            <h4>Description: </h4>
+            <p id="resource-p">Short and fun videos which break down big subjects into easy-to-understand chunks.</p>
+          </div>
+
+          <div class="resource-box">
+            <a href="https://www.forestapp.cc/" target="_blank">
+              <img src="images/forest.png" alt="Forest Image">
+            </a>  
+            <h2>Forest</h2>
+            <h4>Description: </h4>
+            <p id="resource-p">A simplistic study app that is designed to help users focus with the right amount of break time.</p>
+          </div>
+
+          <div class="resource-box">
+            <a href="https://kahoot.com/" target="_blank">
+              <img src="images/kahoot.png" alt="Kahoot Image">
+            </a>  
+            <h2>Kahoot</h2>
+            <h4>Description: </h4>
+            <p id="resource-p">Solo or mulitplayer quizzes which are perfect for reviewing information and learning more.</p>
+          </div>
+
+
+          <div class="resource-box">
+            <a href="https://www.sparknotes.com/" target="_blank">
+              <img src="images/sparknotes.png" alt="Sparknotes Image">
+            </a>  
+            <h2>Sparknotes</h2>
+            <h4>Description: </h4>
+            <p id="resource-p">Study guides and summaries for classic and popular literature, which help with stories, themes, characters, and more.</p>
+          </div>
+
+          <div class="resource-box">
+            <a href="https://ed.ted.com/" target="_blank">
+              <img src="images/ted.png" alt="Ted Image">
+            </a>  
+            <h2>Ted</h2>
+            <h4>Description:</h4>
+            <p id="resource-p">Inspiring live presentations from experts, which are great for study tips, mentality tips, and more.</p>
+          </div>
+
+        
+        </div>
+    </div>
+    <div class="content section3" id="section3">
+          
+      <!-- Content for HELP CENTER goes here -->
+      <!--Backend (to make it work) can be found in faq.js-->
+      <div id="faq-container" class="faq-container">
+          <h2 class="faq-title">Frequently Asked Questions</h2>
+          
+          <div class="searchContainer">
+            <input id="faq-search" type="text" placeholder="Search for Key Words of your Questions Here"></input>
+          </div>
+
+          <div class="faq-list">
+
+
+            <div class="faq-item">
+              <button class="faq-question">What is a GPA?</button>
+              <div class="faq-answer">A GPA, or Grade Point Average, is a number that summarizes academic performance by averaging letter grades over a period of time.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">How do I use the GPA Calculator?</button>
+              <div class="faq-answer">The GPA Calculator consists of four different inputs.<br>You can add your class information to these inputs, and then click "Add Class".<br>The information for the class will go to the table below, and your weighted and unweighted GPA will start to show.<br>You can add as many classes, and marking periods, that you need.<br>If you wish to delete an individual marking period, you can do so, and the GPAs will change accordingly.<br>Once you are done calculating your GPA, you can press the "Delete All" button.<br>By utilizing these instructions, you can effectively calculate your weighted and unweighted GPA using the Bridgewater-Raritan High School's grading scale. 
+              </div>
+            </div>
+
+
+            <div class="faq-item">
+              <button class="faq-question">What is the difference between a weighted and unweighted GPA?</button>
+              <div class="faq-answer">A weighted GPA accounts for the difficulty of classes by giving a numerical boost to more challenging courses, while an unweighted GPA treats all classes equally.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">What does the letter grade U mean in the GPA calculator?</button>
+              <div class="faq-answer">The letter grade "U" represents a numerical grade that is under a 65. It is quite similar to the letter grade "F".</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Are the grade calculations compatible with my institution's grading system?</button>
+              <div class="faq-answer">The GPA calculations that Grade Guru uses are compatible with most institutions' grading systems. <br> However, the calculation system of Bridgewater-Raritan High School was specifically used. </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Can I trust the Resources page?</button>
+              <div class="faq-answer">We thoroughly verify our resources before we release them on Grade Guru. We ensure that resources are accurate and reliable.</div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">How can I contribute to the Grade Guru Resources page?</button>
+              <div class="faq-answer">Email gradegurubusiness@gmail.com with your name, age, the resource you want to provide, and a picture of a license for verification.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">What can I do after I make an account and log in?</button>
+              <div class="faq-answer">After creating an account, you can store the number of marking periods you had, and your weighted/unweighted GPA.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Why is there a date on the title of my saved data boxes?</button>
+              <div class="faq-answer">The date on each of the data boxes represents when you saved the data. This can come in handy when trying to know when you had a certain GPA.</div>
+            </div>
+
+           
+            <div class="faq-item">
+              <button class="faq-question">How do I use the Resources page?</button>
+              <div class="faq-answer">The Resources page consists of 10 different resources to use.<br>It includes a description, and a clickable image that leads you to each resource.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">How do I use the FAQ page?</button>
+              <div class="faq-answer">The FAQ page has many pre-written questions available, and once clicked, you can see the answer for each.<br>In the search bar, you can search keywords of questions to highlight them, so you can find them quicker.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">How do I use the Log In page?</button>
+              <div class="faq-answer">If you do not already have an account, you can create one in the Log In page.<br>Once this is done, you can log in, and save the data you wish in the GPA calculator.<br>You can go back to the Log In page to refresh the page, delete your data, or log out. 
+              </div>
+            </div>
+
+
+
+            <div class="faq-item">
+              <button class="faq-question">I have an idea to make Grade Guru better.</button>
+              <div class="faq-answer">We strive in making Grade Guru the best it can be using feedback! <br> If you would like to submit your feedback or ideas, please email gradegurubusiness@gmail.com.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">I have another question.</button>
+              <div class="faq-answer">If you have any questions not listed on the FAQ page, feel free to contact gradegurubusiness@gmail.com!</div>
+            </div>
+
+
+            
+            <!-- Add more FAQ items as needed -->
+          </div>
+        </div>
+  </div>
+
+
+
+    
+    <div class="content section4" id="section4">
+      <!-- Content for LOG IN goes here -->
+      <!-- Backend is merged with GPA Calculator JS, as both use similar variables in certain cases.-->
+      <div class="center" id="loginSection">
+        <h1>Log In to Grade Guru</h1>
+        <form method="post" onsubmit="login(event)">
+          <!-- this "method" helps in moving information to a server (that is why "post" is there) -->
+    
+          <div class="textField">
+            <input type="text" id="loginUsername" required>
+            <!-- required is built-in -->
+            <span></span>
+            <label>Username</label>
+          </div>
+    
+          <div class="textField">
+            <input type="password" id="loginPassword" required>
+            <!-- required is built-in -->
+            <span></span>
+            <label>Password</label>
+          </div>
+    
+          <input type="submit" value="Log In">
+          <div class="signupLink">
+            <a href="#" onclick="toggleSection()">Need an account? Make one here.</a>
+          </div>
+        </form>
+      </div>
+
+      <div class = "centerAfterLogin">
+        <h2 id="loginWelcomeTitle">Welcome.</h2>
+        <h3 id="loginDisplayTitle"></h3>
+        <button id="refreshButton">Refresh Page</button>
+        <button id="deleteDataButton">Delete All Data</button>
+        <button id="logoutButton">Log Out</button>
+        <p id="logoutText"></p>
+        <p id="infoForLogin"></p>
+      </div>
+    
+      <!-- Content for CREATE ACCOUNT goes here -->
+      <div class="center hidden" id="createAccountSection">
+        <h1>Create Account</h1>
+        <!-- Add your create account form elements here -->
+        <form method="post" onsubmit="createAccount(event)">
+          <!-- this "method" helps in moving information to a server (that is why "post" is there) -->
+          <div class="textField">
+            <input type="text" id="newUsername" required>
+            <!-- required is built-in -->
+            <span></span>
+            <label>New Username</label>
+          </div>
+    
+          <div class="textField">
+            <input type="password" id="newPassword" required>
+            <!-- required is built-in -->
+            <span></span>
+            <label>New Password</label>
+          </div>
+
+          <div class="textField_createAccount">
+            <input type="password" id="confirmPassword" required>
+            <!-- required is built-in -->
+            <span></span>
+            <label>Confirm New Password</label>
+          </div>
+
+          <p id="errorMessage" class="error-message"></p>
+
+          <input type="submit" value="Create">
+        </form>
+      </div>
+      </div>
+    </div>
+
+
+    <script defer src="Javascript/body.js"></script> <!-- !--Referencing to the javascript file website.js. (has to be at the end)-->
+    <script defer src="Javascript/gpaCalculator.js"></script>
+    <script type="module" defer src="Javascript/faq.js"></script>
+</body>
+</html>
+
+<!-- 
+  TIPS FOR NATS:
+  Clear class values
+  Close button after clicking on gpa calc (back to home)
+  Once logged in, turn Log in button to Log out (display user).
+  Make the Class Name Alphanumeric (data validation)
+  Add a save as PDF button
+  Make the Saved Data Boxes bigger
+  make multiple mp save
+  Find a free database to save all the Login data
+-->

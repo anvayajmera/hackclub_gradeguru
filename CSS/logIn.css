@@ -1,0 +1,733 @@
+/* 
+Log In page, Create Account page, and After Log In page's css can be found here
+*/
+
+
+.section4 {
+  background-color: #0a2e7f;
+  height: 100%;
+  padding-bottom: 500px; /* there is a problem with this, fix it.*/
+  margin-top: -80px;
+  background-size: cover;
+}
+
+.center {
+  margin-top: -60px;
+  position: absolute;
+  top: 50%;
+  left: 34.3%;
+  width: 450px;
+  background: white;
+  border-radius: 10px;
+  border-width: 10px;
+  border-color: #d7d7ec;
+  box-shadow: rgba(0, 0, 0, 0.489) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.center.hidden {
+  display: none;
+  pointer-events: none; /* Disable pointer events when hidden */
+}
+
+.center h1 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+form .textField, .textField_createAccount{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.textField input, .textField_createAccount input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.textField label, .textField_createAccount label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+
+.textField span::before, .textField_createAccount span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #226add;
+  transition: .5s; /* animation */
+}
+
+.textField input:focus ~ label,
+.textField input:valid ~ label,
+.textField_createAccount input:focus ~ label,
+.textField_createAccount input:valid ~ label{
+  top: -5px;
+  color: #226add;
+}
+
+.textField input:focus ~ span::before,
+.textField input:valid ~ span::before,
+.textField_createAccount input:focus ~ span::before,
+.textField_createAccount input:valid ~ span::before{
+  width: 100%;
+}
+
+
+
+input[type="submit"]{
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #226add;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+
+input[type="submit"]:hover{
+  border-color: #226add;
+  transition: .5s;
+}
+
+.signupLink{
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+.signupLink a{
+  color: #e75d5d;
+  text-decoration: none;
+}
+.signupLink a:hover{
+  text-decoration: underline;
+}
+
+
+
+/*-
+.centerAfterLogin {
+  display: none;
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4efef;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0; 
+}
+
+
+#savedDataSection {
+  margin-top: 20px;
+}
+
+.savedUserData {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+-*/
+
+
+
+
+.centerAfterLogin {
+  display: none;
+  font-family: 'Rubik';
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4efef;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.506);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.data-item {
+  font-family: 'Rubik';
+  background: #f4efef;
+  border: 1px solid #333;
+  width: calc(33.33% - 20px);
+  height: 250px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  border-width: 10px;
+  border-color: #f4ab19;
+  border-style: outset;
+  box-sizing: border-box;
+  display: inline-block; /* Ensures boxes appear on the same line */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+  padding-bottom: 230px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+
+#loginWelcomeTitle {
+  font-family: 'Rubik';
+  color: #333;
+}
+
+#loginDisplayTitle {
+  font-family: 'Rubik';
+  color: #333;
+  font-weight: bold;
+}
+
+.data-item h2 {
+  color: #333;
+  text-decoration: underline;
+  font-size: 24px;
+  margin-bottom: 20px;
+  padding-top: -10px;
+}
+
+.data-item p {
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+
+
+.data-item p.data-point {
+  font-size: 20px;
+  margin-top: -10px;
+  
+  
+}
+
+.data-item p.data-point span {
+  font-weight: bold;
+}
+
+
+
+#refreshButton {
+  font-family: 'Rubik';
+  background-color: #059445; 
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#refreshButton:hover,#delete-semester:hover {
+  background-color: rgb(6, 114, 55); 
+  transform: scale(1.02);
+  }
+
+
+
+#deleteDataButton {
+  font-family: 'Rubik';
+  background-color: #ca0e07; 
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+}
+
+#deleteDataButton:hover,#delete-semester:hover {
+  background-color: #af0a04; 
+  transform: scale(1.02);
+  }
+
+
+  #logoutButton {
+    font-family: 'Rubik';
+    background-color: #073eca; 
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    cursor: pointer; 
+    margin: 0 auto; 
+    margin-top: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+  }
+
+  #logoutButton:hover {
+    background-color: #0535ac; 
+    transform: scale(1.02);
+    }
+
+
+
+  #logoutText {
+    font-family: 'Rubik';
+    font-size: 18px;
+    color: #e75d5d; /* Tomato color */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+
+
+  #errorMessage {
+    color: #e75d5d;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 844px) {
+    /* 
+    Log In page, Create Account page, and After Log In page's css can be found here
+    */
+
+
+    .section4 {
+      background-color: #0a2e7f;
+      height: 100%;
+      padding-bottom: 500px; /* there is a problem with this, fix it.*/
+      margin-top: -80px;
+      background-size: cover;
+    }
+
+    .center {
+      margin-top: -60px;
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      width: 450px;
+      background: white;
+      border-radius: 10px;
+      border-width: 10px;
+      border-color: #d7d7ec;
+      box-shadow: rgba(0, 0, 0, 0.489) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      animation: fadeIn 0.5s ease-out;
+      margin-top: 150px;
+    }
+
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .center.hidden {
+      display: none;
+      pointer-events: none; /* Disable pointer events when hidden */
+    }
+
+    .center h1 {
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 1px solid silver;
+    }
+
+    .center form {
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+
+    form .textField, .textField_createAccount{
+      position: relative;
+      border-bottom: 2px solid #adadad;
+      margin: 30px 0;
+    }
+    .textField input, .textField_createAccount input{
+      width: 100%;
+      padding: 0 5px;
+      height: 40px;
+      font-size: 16px;
+      border: none;
+      background: none;
+      outline: none;
+    }
+    .textField label, .textField_createAccount label{
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      color: #adadad;
+      transform: translateY(-50%);
+      font-size: 16px;
+      pointer-events: none;
+      transition: .5s;
+    }
+
+
+    .textField span::before, .textField_createAccount span::before{
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #226add;
+      transition: .5s; /* animation */
+    }
+
+    .textField input:focus ~ label,
+    .textField input:valid ~ label,
+    .textField_createAccount input:focus ~ label,
+    .textField_createAccount input:valid ~ label{
+      top: -5px;
+      color: #226add;
+    }
+
+    .textField input:focus ~ span::before,
+    .textField input:valid ~ span::before,
+    .textField_createAccount input:focus ~ span::before,
+    .textField_createAccount input:valid ~ span::before{
+      width: 100%;
+    }
+
+
+
+    input[type="submit"]{
+      width: 100%;
+      height: 50px;
+      border: 1px solid;
+      background: #226add;
+      border-radius: 25px;
+      font-size: 18px;
+      color: #e9f4fb;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+
+    input[type="submit"]:hover{
+      border-color: #226add;
+      transition: .5s;
+    }
+
+    .signupLink{
+      margin: 30px 0;
+      text-align: center;
+      font-size: 16px;
+      color: #666666;
+    }
+    .signupLink a{
+      color: #e75d5d;
+      text-decoration: none;
+    }
+    .signupLink a:hover{
+      text-decoration: underline;
+    }
+
+
+
+    /*-
+    .centerAfterLogin {
+      display: none;
+      position: absolute;
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%); 
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f4efef;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      opacity: 0; 
+    }
+
+
+    #savedDataSection {
+      margin-top: 20px;
+    }
+
+    .savedUserData {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    -*/
+
+
+
+
+    .centerAfterLogin {
+      display: none;
+      font-family: 'Rubik';
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: rgb(227, 233, 236);
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.506);
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .data-item {
+      font-family: 'Rubik';
+      background: rgb(231, 235, 237);
+      border: 1px solid #333;
+      width: calc(33.33% - 20px);
+      height: 250px;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      border-width: 10px;
+      border-color: #f4ab19;
+      border-style: outset;
+      box-sizing: border-box;
+      display: inline-block; /* Ensures boxes appear on the same line */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+    }
+
+
+    #loginWelcomeTitle {
+      font-family: 'Rubik';
+      color: #333;
+    }
+
+    #loginDisplayTitle {
+      font-family: 'Rubik';
+      color: #333;
+      font-weight: bold;
+    }
+
+    .data-item h2 {
+      color: #333;
+      text-decoration: underline;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .data-item p {
+      font-size: 15px;
+      margin-top: -10px;
+    }
+
+
+
+    .data-item p.data-point {
+      font-size: 20px;
+      margin-top: -10px;
+      
+      
+    }
+
+    .data-item p.data-point span {
+      font-weight: bold;
+    }
+
+
+
+    #refreshButton {
+      font-family: 'Rubik';
+      background-color: #059445; 
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer; 
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+    }
+
+    #refreshButton:hover,#delete-semester:hover {
+      background-color: rgb(6, 114, 55); 
+      transform: scale(1.02);
+      }
+
+
+
+    #deleteDataButton {
+      font-family: 'Rubik';
+      background-color: #ca0e07; 
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer; 
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+    }
+
+    #deleteDataButton:hover,#delete-semester:hover {
+      background-color: #af0a04; 
+      transform: scale(1.02);
+      }
+
+
+      #logoutButton {
+        font-family: 'Rubik';
+        background-color: #073eca; 
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        display: block;
+        cursor: pointer; 
+        margin: 0 auto; 
+        margin-top: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+      }
+
+      #logoutButton:hover {
+        background-color: #0535ac; 
+        transform: scale(1.02);
+        }
+
+
+
+      #logoutText {
+        font-family: 'Rubik';
+        font-size: 18px;
+        color: #e75d5d; /* Tomato color */
+        font-weight: bold;
+        text-align: center;
+      }
+      
+
+
+      #errorMessage {
+        color: #e75d5d;
+        font-weight: bold;
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
+.delete-class-button, .delete-data-button {
+  width: 24px; /* Adjust size as needed */
+  height: 24px; /* Adjust size as needed */
+  background-image: url('/images/trash.png'); /* Provide the correct path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+
+.edit-class-button {
+  width: 24px; /* Adjust size as needed */
+  height: 24px; /* Adjust size as needed */
+  background-image: url('/images/edit.png'); /* Provide the correct path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.edit-class-button:hover {
+  transition: opacity 0.3s ease;
+  opacity: 1; /* Optional: Add a hover effect */
+}
+
+
+
+
+.delete-class-button:hover, .delete-data-button:hover {
+  transition: opacity 0.3s ease;
+  opacity: 1; /* Optional: Add a hover effect */
+}
+
+.delete-data-button {
+  margin-bottom: 1000px;
+}
+
+
+
+
+
+.fade-out {
+  animation: fadeOut 0.2s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateX(-100%);
+  }
+}
